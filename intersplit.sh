@@ -1,5 +1,19 @@
 #!/bin/bash
-filePath=$1
+seek=0
+
+while [ ! $# -eq 0 ]
+do
+	case "$1" in
+		-i)
+			filePath=$1
+			;;
+		--seek | -s)
+			seek=$1
+			;;
+	esac
+	shift
+done
+
 
 # https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
 fileExt=${filePath#*.}
@@ -19,7 +33,6 @@ echo "mkdir ${outPath}"
 mkdir "${outPath}"
 
 splitting=true
-seek=0
 segment=0
 nextSeek=0
 success=y
