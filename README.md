@@ -18,6 +18,7 @@ launch the script called intersplit and pass it the path of the file you want to
 - Tag output files with track number
 - Tag output files with track title
 - adjust split position as many times as needed
+- tested with .m4a files
 
 ## Options
 - `-i`
@@ -26,3 +27,14 @@ launch the script called intersplit and pass it the path of the file you want to
 - `-s | --seek`
     - default: 0
     - start position in seconds, all content before this position will be ignored
+- `-t | --tracklist`
+    - optional
+    - provide a text file with track titles followed by track length
+    ```
+        Opening Credits 00:07:23
+        Part One 00:26:08
+        Part Two 00:31:07
+        Part Three 01:04:02
+        Part Four 00:25:17
+    ```
+    - This will allow the script to tag each track title as well as auto populate the segment values
